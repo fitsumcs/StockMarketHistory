@@ -1,10 +1,11 @@
 import streamlit as st 
 import yfinance as yf
 import pandas as pd
-from company import companyName
+from util.company import companyName
+# from util.dateCheck import checkDat
 
 
-# st.beta_set_page_config(page_title='ML Algorithm Compare ',page_icon=":smiley:")
+# st.beta_set_page_config(page_title='Stock Market History ',page_icon=":smiley:")
 
 # Title and Heading 
 
@@ -34,8 +35,8 @@ company_data = yf.Ticker(companyName(company_choice))
 trackDate = company_data.history(period='1d', start = start_date, end=end_date)
 
 if submit:
-    # Draw the Graph
-    st.subheader("The Closing Data ")
-    st.line_chart(trackDate.Close)
-    st.subheader("The Volume Data ")
-    st.line_chart(trackDate.Volume)
+   # Draw the Graph
+   st.subheader("The Closing Data ")
+   st.line_chart(trackDate.Close)
+   st.subheader("The Volume Data ")
+   st.line_chart(trackDate.Volume)
