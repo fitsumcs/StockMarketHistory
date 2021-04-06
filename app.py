@@ -1,6 +1,8 @@
 import streamlit as st 
 import yfinance as yf
 import pandas as pd
+from company import companyName
+
 
 
 
@@ -14,7 +16,7 @@ st.title("""
 
 # Company 
 
-company_choice =  st.sidebar.selectbox("Company Selection", ("goog", "aapl", "msft","SPY", "AAPL"))
+company_choice =  st.sidebar.selectbox("Company Selection", ("GOOGLE", "APPLE", "MICROSOFT"))
 st.sidebar.header("Date Range")
 start_date = st.sidebar.date_input('Start Date')
 end_date = st.sidebar.date_input('End Date')
@@ -26,7 +28,7 @@ st.write("Start Date : ",start_date)
 st.write("End Date : ",end_date)
 
 # get the data of campany 
-company_data = yf.Ticker(company_choice)
+company_data = yf.Ticker(companyName(company_choice))
 
 # Get Historical Data of the Company 
 trackDate = company_data.history(period='1d', start = start_date, end=end_date)
