@@ -4,7 +4,7 @@ import pandas as pd
 from company import companyName
 
 
-
+# st.beta_set_page_config(page_title='ML Algorithm Compare ',page_icon=":smiley:")
 
 # Title and Heading 
 
