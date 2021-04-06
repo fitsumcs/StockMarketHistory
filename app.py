@@ -21,9 +21,9 @@ end_date = st.sidebar.date_input('End Date')
 submit = st.sidebar.button('View Chart')
 
 # Check the Choice 
-st.write(company_choice)
-st.write(start_date)
-st.write(end_date)
+st.write("Company Chosen : ",company_choice)
+st.write("Start Date : ",start_date)
+st.write("End Date : ",end_date)
 
 # get the data of campany 
 company_data = yf.Ticker(company_choice)
@@ -33,5 +33,7 @@ trackDate = company_data.history(period='1d', start = start_date, end=end_date)
 
 if submit:
     # Draw the Graph
+    st.subheader("The Closing Data ")
     st.line_chart(trackDate.Close)
+    st.subheader("The Volume Data ")
     st.line_chart(trackDate.Volume)
