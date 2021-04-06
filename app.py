@@ -13,3 +13,6 @@ st.title("""
 # Company 
 
 company_choice =  st.sidebar.selectbox("Company Selection", ("APPLE", "GOOGLE", "FACEBOOK"))
+st.sidebar.header("Date Range")
+st.sidebar.date_input('start date')
+st.sidebar.date_input('end date')
