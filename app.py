@@ -36,7 +36,7 @@ trackDate = company_data.history(period='1d', start = start_date, end=end_date)
 
 if submit:
    # Draw the Graph
-   st.subheader("The Closing Data ")
+   st.write("## Closing Price ")
    st.line_chart(trackDate.Close)
-   st.subheader("The Volume Data ")
+   st.write("## Volume Price ")
    st.line_chart(trackDate.Volume)
